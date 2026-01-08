@@ -336,6 +336,32 @@ body {
   color: var(--muted-color);
 }
 
+/* Education courses: responsive column layout to utilize space */
+#education .timeline-content ul {
+  list-style: disc;
+  padding-left: 1.25rem;
+  column-count: 1;
+  column-gap: 2rem;
+}
+
+#education .timeline-content ul li {
+  color: var(--text-color);
+  margin-bottom: 0.6rem;
+  break-inside: avoid;
+}
+
+@media (min-width: 700px) {
+  #education .timeline-content ul {
+    column-count: 2;
+  }
+}
+
+@media (min-width: 1100px) {
+  #education .timeline-content ul {
+    column-count: 3;
+  }
+}
+
 /* Projects */
 .projects-grid {
   display: grid;
