@@ -379,6 +379,7 @@ body {
   flex-direction: column;
   align-items: center;
   text-align: center;
+  height: 100%;
 }
 
 .project-card:hover {
@@ -401,8 +402,9 @@ body {
 
 .project-card p {
   font-size: 0.9rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   color: var(--muted-color);
+  flex-grow: 1;
 }
 
 .project-card .link {
@@ -410,6 +412,8 @@ body {
   text-decoration: none;
   font-size: 0.9rem;
   font-weight: bold;
+  margin-top: auto;
+  align-self: center;
 }
 
 .project-card .link:hover {
