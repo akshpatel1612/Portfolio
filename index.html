@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aksh Patel – Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <header class="header">
+      <div class="container nav-container">
+        <div class="logo">AP</div>
+        <nav class="nav" id="nav">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#experience">Experience</a>
+          <a href="#education">Education</a>
+          <a href="#projects">Projects</a>
+          <a href="#publications">Publications</a>
+          <a href="#skills">Skills</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <!-- Hamburger menu for mobile -->
+        <div class="menu-toggle" id="menu-toggle">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero fade-in delay-0">
+      <div class="container hero-content">
+        <h1>Aksh Patel</h1>
+        <p class="subtitle">Industrial &amp; Manufacturing Engineer</p>
+        <div class="cta-buttons">
+          <a href="#projects" class="btn btn-primary">View Projects</a>
+          <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section fade-in delay-1">
+      <div class="container">
+        <h2>About Me</h2>
+        <p>
+          I am an Industrial and Manufacturing engineer focused on New Product
+          Introduction (NPI) and process optimization for SMT/PCBA
+          manufacturing. My expertise spans design of experiments, line
+          balancing, data‐driven decision making, discrete event simulation,
+          and real‑time dashboards. Passionate about technology and continuous
+          improvement, I bring hands‑on experience with leading engineering
+          tools and programming languages to deliver high‑quality products and
+          processes.
+        </p>
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section fade-in delay-2">
+      <div class="container">
+        <h2>Professional Experience</h2>
+        <div class="timeline">
+          <div class="timeline-entry">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <h3>Manufacturing Process Engineer – Graduate Research Assistant</h3>
+              <span class="company">Foxconn Industrial Internet (WISE, SUNY Binghamton)</span>
+              <span class="date">Oct 2024 – Present · Mount Pleasant, WI</span>
+              <ul>
+                <li>
+                  Led NPI for three Google server assemblies, implementing
+                  standardized processes, PFMEAs and control plans achieving
+                  91% first pass yield during ramp‑up.
+                </li>
+                <li>
+                  Increased line utilization by 3.2% and freed 432 hours of
+                  engineering workload annually by developing automated
+                  Power&nbsp;BI OEE and downtime dashboards across six SMT/PCBA lines.
+                </li>
+                <li>
+                  Boosted daily motherboard throughput by 42 units (~$178.5&nbsp;k
+                  in capacity) using capacity planning, takt‑time analysis and
+                  a custom discrete‑event simulation model.
+                </li>
+                <li>
+                  Led comprehensive DOE, tolerance analysis, SPC, MSA and
+                  CpK/CmK studies to quantify equipment capability, eliminate
+                  process variation and secure full NPI validation for high‑volume ramp‑up.
+                </li>
+                <li>
+                  Developed BGA heatmap inspection, stencil optimization and
+                  warpage‑mitigation frameworks supporting CPU BGA process development.
+                </li>
+                <li>
+                  Applied Lean Six Sigma, DMAIC and 8D/5‑Why RCA methodologies
+                  to reduce defects, improve changeover consistency and drive
+                  continuous improvement in high‑volume production.
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="timeline-entry">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <h3>Mechanical Engineer – Intern</h3>
+              <span class="company">Oil and Natural Gas Corporation</span>
+              <span class="date">Jun 2023 – Jul 2023 · Ahmedabad, India</span>
+              <ul>
+                <li>
+                  Analyzed SCADA data to detect performance anomalies and
+                  supported predictive maintenance, improving response time by
+                  1.2% across field sites.
+                </li>
+                <li>
+                  Assisted preventive maintenance planning and cross‑team
+                  coordination to maintain high equipment uptime.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section fade-in delay-3">
+      <div class="container">
+        <h2>Education</h2>
+        <div class="education-list">
+          <div class="education-item">
+            <h3>M.S. Industrial &amp; Systems Engineering</h3>
+            <span class="school">SUNY Binghamton</span>
+            <span class="date">Aug 2024 – Dec 2025 · GPA: 3.62/4.00</span>
+          </div>
+          <div class="education-item">
+            <h3>B.S. Mechanical Engineering</h3>
+            <span class="school">Nirma University</span>
+            <span class="date">2020 – 2024 · GPA: 7.61/10.00</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section fade-in delay-4">
+      <div class="container">
+        <h2>Projects</h2>
+        <div class="projects-grid">
+          <div class="project-card">
+            <img src="assets/project1.png" alt="Thesis Project" />
+            <h3>Advanced CPU BGA Process Development</h3>
+            <p>
+              Developed and optimized CPU BGA manufacturing processes for NPI.
+              Explored heatmap inspection, stencil optimization and
+              warpage mitigation frameworks.
+            </p>
+            <a href="assets/thesis.pdf" class="link">View Thesis Document</a>
+          </div>
+          <div class="project-card">
+            <img src="assets/project2.png" alt="Heatmap Simulator" />
+            <h3>CPU Solder Joint Heatmap Simulator</h3>
+            <p>
+              Created a Python‑based AI system to auto‑detect BGA solder
+              defects via heatmaps during reflow, ensuring reliability.
+            </p>
+            <a href="#" class="link">Run Simulator</a>
+          </div>
+          <div class="project-card">
+            <img src="assets/project3.png" alt="Simulation Project" />
+            <h3>Discrete Event Production Simulator</h3>
+            <p>
+              Built a self‑made production line simulator using SimPy to model
+              SMT lines and maximize throughput and resource utilization.
+            </p>
+            <a href="#" class="link">View Project</a>
+          </div>
+          <div class="project-card">
+            <img src="assets/project4.png" alt="Solar Heater" />
+            <h3>Solar Air Heater Optimization</h3>
+            <p>
+              Optimized surface roughness and flow conditions to improve
+              thermohydraulic efficiency by over 13%, with experimental and
+              analytical methods.
+            </p>
+            <a href="#" class="link">Read More</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Publications Section -->
+    <section id="publications" class="section fade-in delay-5">
+      <div class="container">
+        <h2>Publications</h2>
+        <ul class="publications-list">
+          <li>
+            <strong>Development of a Heatmap Inspection System to Identify
+              Warpage‑Induced Defects.</strong>
+            SMTA&nbsp;International Conference, 2025.
+            <a href="assets/conference-paper.pdf" class="paper-btn" target="_blank">View Paper</a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section fade-in delay-6">
+      <div class="container">
+        <h2>Skills</h2>
+        <div class="skills-grid">
+          <div class="skill-category">
+            <h3>Manufacturing Process &amp; Quality</h3>
+            <ul>
+              <li>SMT, PTH, DFM/DFA, BOM</li>
+              <li>DOE, SPC, MSA, Thermal Profiling</li>
+              <li>PFMEA, Root Cause Analysis (5‑Why, 8D, Ishikawa)</li>
+              <li>5S, Lean Manufacturing, DMAIC</li>
+            </ul>
+          </div>
+          <div class="skill-category">
+            <h3>Modeling &amp; Simulation</h3>
+            <ul>
+              <li>SimPy, FlexSim, Simio</li>
+              <li>MATLAB &amp; Simulink</li>
+              <li>Capacity Planning &amp; Scenario Analysis</li>
+              <li>Queuing Theory &amp; Discrete‑Event Simulation</li>
+            </ul>
+          </div>
+          <div class="skill-category">
+            <h3>Data &amp; Statistical Tools</h3>
+            <ul>
+              <li>Power&nbsp;BI, Minitab, JMP</li>
+              <li>Plotly, Folium, GeoPandas</li>
+              <li>Pandas, NumPy, Matplotlib</li>
+            </ul>
+          </div>
+          <div class="skill-category">
+            <h3>CAD &amp; Productivity</h3>
+            <ul>
+              <li>Vayo&nbsp;DFM, Vayo&nbsp;Stencil, SolidWorks</li>
+              <li>Autodesk, AutoCAD, CAM350</li>
+              <li>MS Office, Google Workspace, Google Colab</li>
+              <li>LaTeX, Lucidchart</li>
+            </ul>
+          </div>
+          <div class="skill-category">
+            <h3>Programming &amp; Automation</h3>
+            <ul>
+              <li>Python, SQL, R</li>
+              <li>Power&nbsp;Automate, Integromat/Make, Zapier</li>
+            </ul>
+          </div>
+          <div class="skill-category">
+            <h3>Libraries &amp; Frameworks</h3>
+            <ul>
+              <li>Pandas, NumPy, Matplotlib</li>
+              <li>Plotly, Folium, GeoPandas</li>
+              <li>Gradio, Streamlit</li>
+            </ul>
+          </div>
+          <!-- Separate certifications and professional skills into distinct categories -->
+          <div class="skill-category">
+            <h3>Certifications</h3>
+            <ul>
+              <li>Lean Six Sigma Green Belt</li>
+            </ul>
+          </div>
+          <div class="skill-category">
+            <h3>Professional Skills</h3>
+            <ul>
+              <li>Communication, Collaboration, Time Management</li>
+              <li>Problem‑Solving, Business Acumen, Leadership</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section fade-in delay-7">
+      <div class="container">
+        <h2>Contact</h2>
+        <p class="contact-intro">
+          Have a question or project in mind? Drop a note and I’ll get back
+          to you soon.
+        </p>
+        <form
+          class="contact-form"
+          action="https://formsubmit.co/akshusa1612@gmail.com"
+          method="POST"
+        >
+          <div class="form-row">
+            <input
+              type="text"
+              name="firstName"
+              placeholder="First name"
+              required
+            />
+            <input
+              type="text"
+              name="lastName"
+              placeholder="Last name"
+              required
+            />
+          </div>
+          <input type="email" name="email" placeholder="Email" required />
+          <input type="text" name="subject" placeholder="Subject" required />
+          <textarea
+            name="message"
+            rows="5"
+            placeholder="Write your message..."
+            required
+          ></textarea>
+          <!-- Hidden options for FormSubmit -->
+          <input type="hidden" name="_subject" value="New message from portfolio" />
+          <input type="hidden" name="_next" value="https://www.akshpatel.com/#contact" />
+          <button type="submit" class="btn btn-primary">Send Message</button>
+        </form>
+        <div class="contact-details">
+          <a
+            href="https://www.google.com/maps/search/Racine,%20Wisconsin"
+            target="_blank"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              class="icon"
+            >
+              <path
+                fill="currentColor"
+                d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"
+              />
+            </svg>
+            Racine, Wisconsin
+          </a>
+          <a href="mailto:akshusa1612@gmail.com">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              class="icon"
+            >
+              <path
+                fill="currentColor"
+                d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"
+              />
+            </svg>
+            akshusa1612@gmail.com
+          </a>
+          <a
+            href="https://www.linkedin.com/in/akshpatel1612"
+            target="_blank"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              class="icon"
+            >
+              <path
+                fill="currentColor"
+                d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-9h3v9zm-1.5-10.28c-.97 0-1.75-.79-1.75-1.76 0-.97.78-1.76 1.75-1.76s1.75.79 1.75 1.76c0 .97-.78 1.76-1.75 1.76zm13.5 10.28h-3v-4.59c0-1.1-.01-2.51-1.53-2.51-1.53 0-1.77 1.2-1.77 2.43v4.67h-3v-9h2.88v1.24h.04c.4-.74 1.36-1.53 2.79-1.53 2.98 0 3.53 1.96 3.53 4.51v4.78z"
+              />
+            </svg>
+            LinkedIn
+          </a>
+          <!-- Instagram placeholder, update href with your Instagram link -->
+          <a href="#" target="_blank">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              class="icon"
+            >
+              <path
+                fill="currentColor"
+                d="M7 2c-2.76 0-5 2.24-5 5v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm10 4.5c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5-1.5-.67-1.5-1.5.67-1.5 1.5-1.5zM12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8z"
+              />
+            </svg>
+            Instagram
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        &copy; 2026 Aksh Patel. All rights reserved.
+      </div>
+    </footer>
+
+    <script>
+      // Simple mobile menu toggle
+      const menuToggle = document.getElementById('menu-toggle');
+      const nav = document.getElementById('nav');
+      menuToggle.addEventListener('click', () => {
+        nav.classList.toggle('nav-open');
+        menuToggle.classList.toggle('open');
+      });
+    </script>
+  </body>
+</html>
