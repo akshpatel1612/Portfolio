@@ -469,6 +469,60 @@
         nav.classList.toggle('nav-open');
         menuToggle.classList.toggle('open');
       });
+
+      // Mark hero as loaded to trigger zoom-out on page load
+      window.addEventListener('load', () => {
+        document.querySelector('.hero')?.classList.add('hero-loaded');
+      });
+
+      // Scroll-triggered reveal using IntersectionObserver
+      (function() {
+        const observerOptions = { root: null, rootMargin: '0px 0px -8% 0px', threshold: 0.12 };
+        const revealObserver = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              const el = entry.target;
+              // If it's a timeline parent, stagger its children
+              if (el.classList.contains('timeline')) {
+                const items = el.querySelectorAll('.timeline-entry');
+                items.forEach((it, i) => {
+                  it.style.transitionDelay = (i * 100) + 'ms';
+                  it.classList.add('in-view');
+                });
+              }
+              // reveal children project cards, lists, and sections
+              el.classList.add('in-view');
+              // also reveal immediate child elements for better effect
+              el.querySelectorAll('.timeline-entry, .project-card, li').forEach((c, i) => {
+                if (!c.classList.contains('in-view')) {
+                  c.style.transitionDelay = (i * 60) + 'ms';
+                  c.classList.add('in-view');
+                }
+              });
+              revealObserver.unobserve(el);
+            }
+          });
+        }, observerOptions);
+
+        // Observe sections and specific elements
+        document.querySelectorAll('.section, .timeline, .projects-grid').forEach(s => revealObserver.observe(s));
+      })();
+
+      // Highlight nav link for section in view
+      (function() {
+        const navLinks = document.querySelectorAll('.nav a');
+        const sections = Array.from(navLinks).map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+        const opts = { root: null, rootMargin: '0px 0px -60% 0px', threshold: 0 };
+        const obs = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              const id = entry.target.id;
+              navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + id));
+            }
+          });
+        }, opts);
+        sections.forEach(s => obs.observe(s));
+      })();
     </script>
   </body>
 </html>

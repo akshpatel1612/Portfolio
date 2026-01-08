@@ -424,6 +424,87 @@ body {
   color: var(--muted-color);
 }
 
+/* Section separator: subtle diagonal band */
+.section + .section::before {
+  content: "";
+  display: block;
+  height: 30px;
+  margin-top: -30px;
+  background: linear-gradient(135deg, rgba(245,197,24,0.06), rgba(255,255,255,0));
+  transform: skewY(-2deg);
+  z-index: 0;
+}
+
+/* Gentle animated background band behind hero */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, rgba(245,197,24,0.03), rgba(255,255,255,0.02));
+  pointer-events: none;
+  z-index: 0;
+  animation: bg-band 30s linear infinite;
+}
+
+@keyframes bg-band {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Hero background slight zoom-out on page load */
+.hero {
+  background-size: 110%;
+  transition: background-size 1.4s cubic-bezier(.22,.9,.35,1);
+}
+.hero.hero-loaded {
+  background-size: 100%;
+}
+
+/* Reveal animations for scroll-triggered elements */
+.fade-in, .timeline-entry, .projects-grid .project-card, .certifications-list ul li {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 480ms ease, transform 480ms cubic-bezier(.2,.8,.2,1);
+}
+.in-view {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* Stagger timeline entries (fallback using nth-child) */
+.timeline-entry:nth-child(1) { transition-delay: 0.05s; }
+.timeline-entry:nth-child(2) { transition-delay: 0.12s; }
+.timeline-entry:nth-child(3) { transition-delay: 0.18s; }
+.timeline-entry:nth-child(4) { transition-delay: 0.24s; }
+.timeline-entry:nth-child(5) { transition-delay: 0.30s; }
+.timeline-entry:nth-child(6) { transition-delay: 0.36s; }
+
+/* Project card hover: lift + softer shadow */
+.project-card {
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+.project-card:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.45);
+}
+
+/* Button micro-interactions */
+.btn { transition: transform 160ms ease, box-shadow 160ms ease, background-color 160ms ease; }
+.btn:hover { transform: scale(1.03); }
+.btn-primary:hover, .btn-secondary:hover { box-shadow: 0 6px 18px rgba(245,197,24,0.12); }
+
+/* Nav active link */
+.nav a.active { color: var(--primary-color); position: relative; }
+.nav a.active::after { content: ""; position: absolute; left: 0; right: 0; bottom: -6px; height: 2px; background: var(--primary-color); border-radius: 2px; }
+
+/* Ensure timeline dots remain above pseudo-elements */
+.timeline-dot { z-index: 2; }
+
+/* Certifications list bullets consistent */
+.certifications-list ul { list-style: disc; padding-left: 1.25rem; }
+.certifications-list ul li { margin-bottom: 0.6rem; color: var(--text-color); }
+
 .publications-list strong {
   color: var(--text-color);
 }
