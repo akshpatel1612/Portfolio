@@ -470,10 +470,8 @@
         menuToggle.classList.toggle('open');
       });
 
-      // Mark hero as loaded to trigger zoom-out on page load
-      window.addEventListener('load', () => {
-        document.querySelector('.hero')?.classList.add('hero-loaded');
-      });
+      // Hero background is static now; removed page-load zoom behavior
+      // (no action needed on load)
 
       // Scroll-triggered reveal using IntersectionObserver
       (function() {
@@ -482,20 +480,22 @@
           entries.forEach(entry => {
             if (entry.isIntersecting) {
               const el = entry.target;
-              // If it's a timeline parent, stagger its children
+              // add base delay so reveals happen 1s later
+              el.style.transitionDelay = '1000ms';
+              // If it's a timeline parent, stagger its children (with +1s base)
               if (el.classList.contains('timeline')) {
                 const items = el.querySelectorAll('.timeline-entry');
                 items.forEach((it, i) => {
-                  it.style.transitionDelay = (i * 100) + 'ms';
+                  it.style.transitionDelay = (1000 + i * 100) + 'ms';
                   it.classList.add('in-view');
                 });
               }
-              // reveal children project cards, lists, and sections
+              // reveal the section after the base delay
               el.classList.add('in-view');
-              // also reveal immediate child elements for better effect
+              // also reveal immediate child elements for better effect (with +1s base)
               el.querySelectorAll('.timeline-entry, .project-card, li').forEach((c, i) => {
                 if (!c.classList.contains('in-view')) {
-                  c.style.transitionDelay = (i * 60) + 'ms';
+                  c.style.transitionDelay = (1000 + i * 60) + 'ms';
                   c.classList.add('in-view');
                 }
               });

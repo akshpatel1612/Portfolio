@@ -424,16 +424,16 @@ body {
   color: var(--muted-color);
 }
 
-/* Section separator: subtle diagonal band */
+/* Section separator: subtle horizontal band */
 .section + .section::before {
   content: "";
   display: block;
   height: 30px;
   margin-top: -30px;
-  background: linear-gradient(135deg, rgba(245,197,24,0.06), rgba(255,255,255,0));
-  transform: skewY(-2deg);
+  background: linear-gradient(90deg, rgba(245,197,24,0.06), rgba(255,255,255,0));
+  /* removed skew to keep separator perfectly horizontal */
   z-index: 0;
-}
+} 
 
 /* Gentle animated background band behind hero */
 .hero::before {
@@ -452,14 +452,13 @@ body {
   100% { background-position: 0% 50%; }
 }
 
-/* Hero background slight zoom-out on page load */
+/* Hero background: static (no zoom) */
 .hero {
-  background-size: 110%;
-  transition: background-size 1.4s cubic-bezier(.22,.9,.35,1);
+  background-size: cover;
+  transition: none;
 }
-.hero.hero-loaded {
-  background-size: 100%;
-}
+
+/* Removed hero-loaded zoom effect to keep background static */
 
 /* Reveal animations for scroll-triggered elements */
 .fade-in, .timeline-entry, .projects-grid .project-card, .certifications-list ul li {
@@ -642,37 +641,38 @@ body {
   animation: fadeInUp 0.8s forwards;
 }
 
+/* Added +1s to all animation delays so scroll and load reveals appear later */
 .delay-0 {
-  animation-delay: 0s;
-}
-
-.delay-1 {
-  animation-delay: 0.2s;
-}
-
-.delay-2 {
-  animation-delay: 0.4s;
-}
-
-.delay-3 {
-  animation-delay: 0.6s;
-}
-
-.delay-4 {
-  animation-delay: 0.8s;
-}
-
-.delay-5 {
   animation-delay: 1s;
 }
 
-.delay-6 {
+.delay-1 {
   animation-delay: 1.2s;
 }
 
-.delay-7 {
+.delay-2 {
   animation-delay: 1.4s;
 }
+
+.delay-3 {
+  animation-delay: 1.6s;
+}
+
+.delay-4 {
+  animation-delay: 1.8s;
+}
+
+.delay-5 {
+  animation-delay: 2s;
+}
+
+.delay-6 {
+  animation-delay: 2.2s;
+}
+
+.delay-7 {
+  animation-delay: 2.4s;
+} 
 
 @keyframes fadeInUp {
   from {
